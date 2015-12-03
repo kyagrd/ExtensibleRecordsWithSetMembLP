@@ -1,4 +1,4 @@
-# Executable Relational Specification of Extensible Records with Set-Membership in Logic Programming
+# Specification of Extensible Records with Set-Membership in Logic Programming
 
 okay this is a title for a new paper now I have a pretty concrete idea and at least I can implement with Prolog (of course with some non-logical built-in hacks)
 
