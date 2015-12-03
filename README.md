@@ -35,3 +35,6 @@ unifiying lhs and rhs to `{x:int, x:bool | R}`. This is not what we want for str
 What we want is map unification where the unification should fail if different values (`int` and `bool`
 in this example) are mapped from the same key (`x` in this example).
 The question is how we can implement map unification given set unification.
+
+Clojure's `core.logic` implements (partial) map unification, but not as described above.
+http://clojure-log.n01se.net/date/2013-02-09.html
