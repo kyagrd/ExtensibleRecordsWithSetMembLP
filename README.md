@@ -1,11 +1,36 @@
-# Specification of Extensible Records with Set-Membership in Logic Programming
+# ExtensibleRecordsWithSetMembLP
 
-okay this is a title for a new paper now I have a pretty concrete idea and at least I can implement with Prolog (of course with some non-logical built-in hacks)
+Okay, this is a title for a new paper:
 
-The Prolog code for set membersihp is posted online
+  Executable Relational Specification of Extensible Records with Set-Membership in Logic Programming
+
+or, in short,
+
+  ER-spec of Extensible Records with Set-Membership in LP
+
+Now I have a pretty concrete idea and at least I think I can develop an ER-spec
+of Extensible Records with Prolog (of course relying on some non-logical hacks).
+
+The Prolog code examples implementing set unification from set membersihp are posted online
   * http://ideone.com/uNHNYs (a naive one)
   * http://ideone.com/SyDfCy (a better one)
+Although it is possible to implement set unification as a library like this, it is not ideal.
+What I really want is a LP system that supports set unification (where order and duplication are irrelevant) as a primitive operation as well as structural unification (where order and dupliation matters), and furthermore, set-values and ordinary structural values in traditional LP should be able to be mix in together. That is, structural compound term can contain sets as its argument as well as other structural values. And of course, set should be able to contain both structural values and set values. So, there should be a universal unification operator that does set unification when arguments are sets and does structural unification when arguments are structural.
 
-Although it is possible to implement set unification as a library in this way, this is not ideal.
+Set unification is essentional but may be not enough to handle type inference including records.
+Let's use a notation like this, uniyfing two records types.
 
-What I really need is a LP system that supports set unification (where order and duplication are irrelevant) as a primitive operation as well as structural unification (where order and dupliation matters), and furthermore, set-values and ordinary structural values in traditional LP should be able to be mix in together. That is, structural compound term can contain sets as its argument as well as other structural values. And of course, set should be able to contain both structural values and set values. So, there should be a universal unification operator that does set unification when arguments are sets and does structural unification when arguments are structural.
+    {x:int, y:T1 | R1} = {y:T2, z:int | R2}
+
+We expect the result to be `R1 = {z:int|R}`, `R2 = {x:int|R}`,
+`T1 = int`, and `T2 = int`, which can be computed by set unification.
+However, consider
+
+    {x:int, | R1} = {x:bool | R2}
+
+If we simply consider `x:int` and `x:bool` as structural compound terms,
+which is the case in Prolog, the set unification results in `R1 = {x:bool|R}` and `R2 = {x:int|R}`
+unifiying lhs and rhs to `{x:int, x:bool | R}`. This is not what we want for structural typing of records.
+What we want is map unification where the unification should fail if different values (`int` and `bool`
+in this example) are mapped from the same key (`x` in this example).
+The question is how we can implement map unification given set unification.
