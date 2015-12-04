@@ -35,7 +35,7 @@ We expect the result to be `R1 = {z:int|R}`, `R2 = {x:int|R}`,
 `T1 = int`, and `T2 = int`, which can be computed by set unification.
 However, consider
 
-    {x:int, | R1} = {x:bool | R2}
+    {x:int | R1} = {x:bool | R2}
 
 If we simply consider `x:int` and `x:bool` as structural compound terms,
 which is the case in Prolog, the set unification results in `R1 = {x:bool|R}` and `R2 = {x:int|R}`
