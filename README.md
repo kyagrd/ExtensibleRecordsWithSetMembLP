@@ -44,5 +44,7 @@ What we want is map unification where the unification should fail if different v
 in this example) are mapped from the same key (`x` in this example).
 The question is how we can implement map unification given set unification.
 
-Clojure's `core.logic` implements (partial) map unification, but not as described above.
+Clojure's `core.logic` implements (partial) map unification, but not as described above
 http://clojure-log.n01se.net/date/2013-02-09.html
+which I think is a wrong design (it is not transitive, cannot really call it unification).
+It should be designed like open-ended set unification.
