@@ -15,6 +15,14 @@ The Prolog code examples implementing set unification from set membersihp are po
   * http://ideone.com/uNHNYs (a naive one)
   * http://ideone.com/SyDfCy (a better one)
 
+which is based on
+"Membership-Constraints and Complexity in Logic Programming with Sets", Frieder Stolzenburg (1996).
+The paper is available online at either
+http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.54.8356
+or
+http://link.springer.com/chapter/10.1007%2F978-94-009-0349-4_15
+(if you paid springer).
+
 Although it is possible to implement set unification as a library like this, it is not ideal.
 What I really want is a LP system that supports set unification (where order and duplication are irrelevant) as a primitive operation as well as structural unification (where order and dupliation matters), and furthermore, set-values and ordinary structural values in traditional LP should be able to be mix in together. That is, structural compound term can contain sets as its argument as well as other structural values. And of course, set should be able to contain both structural values and set values. So, there should be a universal unification operator that does set unification when arguments are sets and does structural unification when arguments are structural.
 
