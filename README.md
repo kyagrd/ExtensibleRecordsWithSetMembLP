@@ -33,11 +33,10 @@ Let's use a notation like this, uniyfing two records types.
 (Yes, I know that Prolog uses curely braces for tuples, but
 I can't think of a better syntax that is backward compatible with Prolog).
 
-    {x:int, y:T1 | R1} = {y:T2, z:int | R2}
+    {x:int, y:T | R1} = {y:int, z:int | R2}
 
-We expect the result to be `R1 = {z:int|R}`, `R2 = {x:int|R}`,
-`T1 = int`, and `T2 = int`, which can be computed by set unification.
-However, consider
+We expect the result to be `R1 = {z:int|R}`, `R2 = {x:int|R}`, and
+`T = int`, which can be computed by set unification. However, consider
 
     {x:int | R1} = {x:bool | R2}
 
