@@ -45,7 +45,8 @@ which is the case in Prolog, the set unification results in `R1 = {x:bool|R}` an
 unifiying lhs and rhs to `{x:int, x:bool | R}`. This is not what we want for structural typing of records.
 What we want is map unification where the unification should fail if different values (`int` and `bool`
 in this example) are mapped from the same key (`x` in this example).
-I was able to implemnt map unification in following a similar code structure, also posted online
+I was able to implemnt map unification following a similar code structure for set unification.
+The Prolog code for map unification is also posted online
  * http://ideone.com/GAcIVa
 
 which I think is our contribution (maybe someone have been using a similar thing in other context, but for extensibe records this would be a unique appraoch so far, I think).
