@@ -28,6 +28,8 @@ What I really want is a LP system that supports set unification (where order and
 
 Set unification is essentional but may be not enough to handle type inference including records.
 Let's use a notation like this, uniyfing two records types.
+(Yes, I know that Prolog uses curely braces for tuples, but
+I can't think of a better syntax that is backward compatible with Prolog).
 
     {x:int, y:T1 | R1} = {y:T2, z:int | R2}
 
@@ -42,9 +44,18 @@ which is the case in Prolog, the set unification results in `R1 = {x:bool|R}` an
 unifiying lhs and rhs to `{x:int, x:bool | R}`. This is not what we want for structural typing of records.
 What we want is map unification where the unification should fail if different values (`int` and `bool`
 in this example) are mapped from the same key (`x` in this example).
-The question is how we can implement map unification given set unification.
+I was able to implemnt map unification in following a similar code structure, also posted online
+ * http://ideone.com/GAcIVa
 
+which I think is our contribution (maybe someone have been using a similar thing in other context, but for extensibe records this would be a unique appraoch so far, I think).
+
+Now that we have implemented both unifications for sets and maps, which could be open ended,
+how much do we need to support as primitives and as a library.
+I definitely feel that set unification is worthwhile to be supported as a primitive operation, but what about map unification?
+Can we efficiently and declaratively implement map unification in terms of set unification and ordinary unfication, or, is it also worthwhil to support as a primitive operation as well in logic programming?
+
+There is a related work in a more practical setting.
 Clojure's `core.logic` implements (partial) map unification, but not as described above
-http://clojure-log.n01se.net/date/2013-02-09.html
+rather like this http://clojure-log.n01se.net/date/2013-02-09.html
 which I think is a wrong design (it is not transitive, cannot really call it unification).
 It should be designed like open-ended set unification.
