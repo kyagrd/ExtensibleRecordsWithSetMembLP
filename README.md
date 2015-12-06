@@ -8,6 +8,8 @@ or, in short,
 
   ER-spec of Extensible Records with Set-Membership in LP
 
+For those wondering what we mean by ER-spec, see https://www.researchgate.net/publication/285523247
+
 Now I have a pretty concrete idea and at least I think I can develop an ER-spec
 of Extensible Records with Prolog (of course relying on some non-logical hacks).
 
