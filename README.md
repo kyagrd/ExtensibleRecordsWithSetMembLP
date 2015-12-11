@@ -61,3 +61,6 @@ Clojure's `core.logic` implements (partial) map unification, but not as describe
 rather like this http://clojure-log.n01se.net/date/2013-02-09.html
 which I think is a wrong design (it is not transitive, cannot really call it unification).
 It should be designed like open-ended set unification.
+
+This article has references to several LP language supporting set unification
+http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.13.6364
