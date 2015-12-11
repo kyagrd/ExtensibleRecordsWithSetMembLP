@@ -65,5 +65,6 @@ It should be designed like open-ended set unification.
 This article has references to several LP language supporting set unification
 http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.13.6364
 
+
 --------
-[[.. ⮥]](http://kyagrd.github.io/) (back to homepage)
+[[.. ⮥]](http://kyagrd.github.io/tiper/) (back to TIPER project page)
