@@ -54,7 +54,8 @@ which I think is our contribution (maybe someone have been using a similar thing
 Now that we have implemented both unifications for sets and maps, which could be open ended,
 how much do we need to support as primitives and as a library.
 I definitely feel that set unification is worthwhile to be supported as a primitive operation, but what about map unification?
-Can we efficiently and declaratively implement map unification in terms of set unification and ordinary unfication, or, is it also worthwhil to support as a primitive operation as well in logic programming?
+Can we efficiently and declaratively implement map unification in terms of set unification and ordinary unfication, or, is it also worthwhil to support as a primitive operation as well in logic programming? Not a complete answer but here is my blog article contemplating on why open-ended set unification is not supported in logic programming implementations as a generic primitive operation:
+http://kyagrd.tumblr.com/post/136595488814/why-prolog-does-not-have-open-ended-set
 
 There is a related work in a more practical setting.
 Clojure's `core.logic` implements (partial) map unification, but not as described above
@@ -65,8 +66,6 @@ It should be designed like open-ended set unification.
 This article has references to several LP language supporting set unification
 http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.13.6364
 
-This is my blog article contemplating on why open-ended set unification is not supported in logic programming implementations as a generic primitive operation
-http://kyagrd.tumblr.com/post/136595488814/why-prolog-does-not-have-open-ended-set
 
 --------
 [[.. ⮥]](http://kyagrd.github.io/tiper/) (back to TIPER project page)
