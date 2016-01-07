@@ -65,6 +65,8 @@ It should be designed like open-ended set unification.
 This article has references to several LP language supporting set unification
 http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.13.6364
 
+This is my blog article contemplating on why open-ended set unification is not supported in logic programming implementations as a generic primitive operation
+http://kyagrd.tumblr.com/post/136595488814/why-prolog-does-not-have-open-ended-set
 
 --------
 [[.. ⮥]](http://kyagrd.github.io/tiper/) (back to TIPER project page)
